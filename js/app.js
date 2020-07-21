@@ -27,8 +27,8 @@ submit.addEventListener('click', function () {
                     <td>${phone.value}</td>
                     <td>${date.value}</td>
                     <td>${gender.checked? 'male':'female'}</td>
-                    <td><img width="100px" src="${img.src}"></td>
-                    <td><a href="#" onclick="edit_html(${sl})">Edit</a></td>
+                    <td><img id="rendar" width="100px" src="${img.src}"></td>
+                    <td><a href="#" onclick="edit_html(${sl})">Edit</a> <a href="#" onclick="del()">Delete</a></td>
                 </tr>`
 
         // insert into table body
@@ -55,11 +55,10 @@ function clear() {
 
     // document.getElementById('submitBtn').style.display == "block" ?document.getElementById('submitBtn').style.display == "none":null;
 
-    // document.getElementById('more').style.display == "none" ?document.getElementById('submitBtn').style.display == "block":null;
-
+    // document.getElementById('more').style.display == "block" ?document.getElementById('submitBtn').style.display == "none":null;
+    
 
 }
-
 // check / validation
 function check() {
     if (name.value == '') {
@@ -76,16 +75,31 @@ function check() {
 // }
 function edit_html(sl) {
 
-    
     a = document.querySelector(`.sl-${sl}`)
 
     document.querySelector(`#name`).value = a.children[1].innerHTML
     document.querySelector(`#email`).value = a.children[2].innerHTML
+    document.querySelector(`#phone`).value = a.children[3].innerHTML
+    document.querySelector(`#date`).value = a.children[4].innerHTML
+    // document.querySelector(`#output`).src = a.children[6].innerHTML.rendar.src
 
-    a.children[2].innerHTML = document.querySelector(`#email`).value
+    // a.children[2].innerHTML = document.querySelector(`#email`).value
+    
+document.getElementById('submitBtn').style.display = "none";
 
+    document.getElementById('more').style.display = "block";
 }
 
+
+
+
+function del(e){
+    e.target.remove();
+}
+
+
+
+// img load function
 
 var loadFile = function (event) {
     var reader = new FileReader();
@@ -95,3 +109,9 @@ var loadFile = function (event) {
     };
     reader.readAsDataURL(event.target.files[0]);
 };
+
+
+// update function
+function update(){
+  confirm("dhhdh")
+}
