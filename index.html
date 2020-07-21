@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JAVASCRIPT PROJECT THREE</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <!-- navbar-area -->
+  <nav class="light-blue lighten-1" role="navigation">
+    <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">Logo</a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="#">Navbar Link</a></li>
+      </ul>
+
+      <ul id="nav-mobile" class="sidenav">
+        <li><a href="#">Navbar Link</a></li>
+      </ul>
+      <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+
+  <!-- Form-area -->
+  <section class="form-table-area">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-5">
+          <div class="matarel-form-area">
+            <form class="col s12 box-shadow">
+              <h2 class="heading">Add User</h2>
+              <div class="input-field col s12">
+                <input id="name" type="text" class="validate">
+                <label for="name">Full Name</label>
+              </div>
+              <div class="input-field col s12">
+                <input id="email" type="email" class="validate">
+                <label for="email">Enter your Email Address</label>
+              </div>
+              <div class="input-field col s12">
+                <input id="phone" type="number" class="validate">
+                <label for="number">Enter your Phone Number</label>
+              </div>
+              <div class="input-field col s12">
+                <input id="date" type="date" class="validate">
+                <label for="date">Date</label>
+              </div>
+              <label for="gender">Seclect Gender</label>
+              <div class="seclect-arae">
+                <label>
+                  <input class="with-gap" value="male" name="group3" id="rad1" type="radio" />
+                  <span>male</span>
+                </label>
+                <label>
+                  <input class="with-gap" value="female" name="group3" id="rad2" type="radio" />
+                  <span>female</span>
+                </label>
+              </div>
+            
+              <div class="input-field col s12">
+
+                <div class="row">
+
+                  <div class="col-md-6">
+                    <input type="file" class="form-control" id="image" accept="image/*" onchange="loadFile(event)"
+                      required>
+                  </div>
+                  <div class="col-md-6">
+                    <div id="img-block" style="background-color:grey;width:89px;height:89px;">
+                      <img id="output" style="width:100%;height:100%" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="submite-arae">
+                <button type="button" id="submitBtn" class="btn waves-effect waves-light red lighten-2">Add</button>
+                <div class="more" style="display: none;">
+                  <button type="button"  id="updateBtn" class="btn waves-effect waves-light red lighten-2" >Update</button>
+                <button type="button" onclick="clear()" class="btn waves-effect waves-light red lighten-2" >Cancel</button>
+                </div>
+                
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class=" col-md-7">
+          <div class="data-show-table box-shadow">
+            <h2 class="heading">User List</h2>
+            <table id="table">
+              <thead>
+                <tr>
+                  <th>SL</th>
+                  <th>Name</th>
+                  <th>Email</th>
+                  <th>Phone</th>
+                  <th>Date</th>
+                  <th>Gender</th>
+                  <th>image</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <script src="js/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/app.js"></script>
+
+  <script>
+    var options = ""
+    document.addEventListener('DOMContentLoaded', function () {
+      var elems = document.querySelectorAll('.datepicker');
+      var instances = M.Datepicker.init(elems, options);
+    });
+  </script>
+</body>
+
+</html>
