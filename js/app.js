@@ -81,7 +81,7 @@ function edit_html(sl) {
     document.querySelector(`#email`).value = a.children[2].innerHTML
     document.querySelector(`#phone`).value = a.children[3].innerHTML
     document.querySelector(`#date`).value = a.children[4].innerHTML
-    // document.querySelector(`#output`).src = a.children[6].innerHTML.rendar.src
+    document.querySelector(`#output`).src = a.children[6].children[0].src
 
     // a.children[2].innerHTML = document.querySelector(`#email`).value
     
