@@ -26,7 +26,6 @@ submit.addEventListener('click', function () {
                     <td>${email.value}</td>
                     <td>${phone.value}</td>
                     <td>${date.value}</td>
-                    <td>${gender.checked? 'male':'female'}</td>
                     <td><img id="rendar" width="100px" src="${img.src}"></td>
                     <td><a href="#" onclick="edit_html(${sl})">Edit</a> <a href="#" onclick="del()">Delete</a></td>
                 </tr>`
@@ -49,7 +48,6 @@ function clear() {
     email.value = '';
     phone.value = '';
     date.value = '';
-    gender.value = '';
     document.getElementById('output').src = "";
     document.getElementById('image').value = "";
 
@@ -81,7 +79,7 @@ function edit_html(sl) {
     document.querySelector(`#email`).value = a.children[2].innerHTML
     document.querySelector(`#phone`).value = a.children[3].innerHTML
     document.querySelector(`#date`).value = a.children[4].innerHTML
-    document.querySelector(`#output`).src = a.children[6].children[0].src
+    document.querySelector(`#output`).src = a.children[5].children[0].src
 
     // a.children[2].innerHTML = document.querySelector(`#email`).value
     
@@ -92,9 +90,9 @@ document.getElementById('submitBtn').style.display = "none";
 
 
 
-
-function del(e){
-    e.target.remove();
+// Remove function
+function del(){
+    tbody.remove();
 }
 
 
@@ -111,7 +109,21 @@ var loadFile = function (event) {
 };
 
 
+// cancel function
+function cancel(){
+    document.getElementById('submitBtn').style.display = "block";
+    document.getElementById('more').style.display = "none";
+    clear();
+}
 // update function
 function update(){
   confirm("dhhdh")
+    a.children[1].innerHTML = document.querySelector(`#name`).value;
+    a.children[2].innerHTML = document.querySelector(`#email`).value
+    a.children[3].innerHTML= document.querySelector(`#phone`).value 
+    a.children[4].innerHTML= document.querySelector(`#date`).value 
+    a.children[5].children[0].src =document.querySelector(`#output`).src 
+    document.getElementById('submitBtn').style.display = "block";
+    document.getElementById('more').style.display = "none";
+    clear();
 }
