@@ -27,7 +27,7 @@ submit.addEventListener('click', function () {
                     <td>${phone.value}</td>
                     <td>${date.value}</td>
                     <td><img id="rendar" width="100px" src="${img.src}"></td>
-                    <td><a href="#" onclick="edit_html(${sl})">Edit</a> <a href="#" onclick="del()">Delete</a></td>
+                    <td><a href="#" onclick="edit_html(${sl})">Edit</a> <a href="#" onclick="del(${sl})">Delete</a></td>
                 </tr>`
 
         // insert into table body
@@ -91,8 +91,8 @@ document.getElementById('submitBtn').style.display = "none";
 
 
 // Remove function
-function del(){
-    tbody.remove();
+function del(sl){
+    document.querySelector(`.sl-${sl}`).remove()
 }
 
 
